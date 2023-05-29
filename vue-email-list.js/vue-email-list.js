@@ -7,8 +7,6 @@ const{ createApp } = Vue;
 
 createApp({
     data() {
-        listEmail = [],
-        console.log(listEmail);
         return {
             listEmail: [],
             
@@ -20,13 +18,13 @@ createApp({
                 .get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then( emailGen => {
 
-                console.log(emailGen.data);
-                this.listEmail.push(emailGen.data.response)
-                console.log(this.listEmail);
+                // console.log(emailGen.data);
+                this.listEmail.push(emailGen.data)
+                // console.log(this.listEmail);
 
             }) 
-            console.log(this.listEmail);
+            
         }
-
+        console.log(this.listEmail);
     },
 }).mount('#app')
