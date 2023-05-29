@@ -12,11 +12,12 @@
 <body>
     <div id="app">
         <h1>Lista email generate</h1>
-        <ul>
+        <ul v-if="listEmail.length === 10">
             <li v-for=" email in listEmail">
                 {{email.response}}
             </li>
         </ul>
+        <h3 v-else>Generazione email in corso...</h3>
     </div>
     
     <script type="text/javascript" src="vue-email-list.js/vue-email-list.js"></script>
