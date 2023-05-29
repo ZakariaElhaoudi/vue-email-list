@@ -8,23 +8,25 @@ const{ createApp } = Vue;
 createApp({
     data() {
         listEmail = [],
-        numero = 0;
-        console.log(numero);
+        console.log(listEmail);
         return {
             listEmail: [],
             
         }
     },
     mounted() {
-        axios
-            .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then( emailGen => {
+        for (let i = 0; i < 10; i++) {
+            axios
+                .get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then( emailGen => {
 
-            console.log(emailGen.data);
-            this.listEmail.push(emailGen.data.response)
-            console.log(listEmail);
+                console.log(emailGen.data);
+                this.listEmail.push(emailGen.data.response)
+                console.log(this.listEmail);
 
-    })
+            }) 
+            console.log(this.listEmail);
+        }
 
     },
 }).mount('#app')
